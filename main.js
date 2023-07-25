@@ -1,5 +1,5 @@
-function tocaSomPom () {
-    document.querySelector('#som_tecla_pom').play();
+function tocaSom (idElementoAudio) {
+    document.querySelector(idElementoAudio).play();
 
 }
 function tocaSomClap () {
@@ -15,6 +15,27 @@ function tocaSomClap () {
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-listaDeTeclas[0].onclick = tocaSomPom
-// Funciona como um print no console
-console.log(listaDeTeclas);
+// let contador = 0;
+
+for (let contador=0; contador < listaDeTeclas.length;contador++){
+// while (contador < listaDeTeclas.length){
+
+    const tecla=listaDeTeclas[contador]
+    const id_final=tecla.classList[1];
+    // Template String
+    // crase no lugar da aspas e $ para formartar a string
+    const id_montado=`#som_${id_final}`;
+    /*
+    // funções anônimas
+    São o valor de algum atributo 
+    ou estão sendo armazenadas dentro de alguma referência constante ou variável.
+    Então eu estou aguardando uma função, vou escrever function dentro desse atributo onclick.
+    */
+    tecla.onclick = function (){
+        tocaSom(id_montado)
+    };
+    // contador =contador +1;
+    // Funciona como um print no console
+    console.log(contador);
+}
+
