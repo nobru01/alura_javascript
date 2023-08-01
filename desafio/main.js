@@ -28,5 +28,13 @@ for (let contador=0;contador<listaDeTeclas.length;contador++){
         // digita_tecla(tecla_valor);
 
     };
+    tecla.onkeydown=function (evento) {
+        if (evento.code ==="Enter"|| evento.code ==="Space"){
+        tecla.classList.add('ativa');
+        }    
+    }
+    tecla.onkeyup=function () {
+        tecla.classList.remove('ativa');
+    }
 
 }

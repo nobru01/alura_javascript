@@ -42,6 +42,12 @@
     width: 80px;
   }
   
+  /* a classe pode ser criada sem a referência completa do caminho */
+  /* Nesse exemplo a classe ativa vai dentro de input, que não tem classe a princípio */
+  .ativa {
+    background-color: yellow;
+  }
+
   input[type=tel] {
     background-color: #cccccc;
     border-radius: 10px;
