@@ -1,10 +1,20 @@
-function tocaSom (idElementoAudio) {
-    document.querySelector(idElementoAudio).play();
+function tocaSom (seletorAudio) {
+    
+    const elemento=document.querySelector(seletorAudio);
 
+    if (elemento && elemento.localName==='audio'){
+            elemento.play();
+
+        }
+    else {
+        alert('elemento não encontrado ou seletor inválido.')
+    
+        }
+ 
 }
-function tocaSomClap () {
-    document.querySelector('#som_tecla_clap').play();
-}
+// function tocaSomClap () {
+//     document.querySelector('#som_tecla_clap').play();
+// }
 /* passando uma função para um botão -> não coloca o "()", pq senão vai rodar a função
  nao queremos que rode a função quando abrir a página só quando clicar no botão
  document.querySelector('.tecla_pom').onclick = tocaSomClap();
@@ -37,7 +47,11 @@ for (let contador=0; contador < listaDeTeclas.length;contador++){
     // contador =contador +1;
     // Funciona como um print no console
     console.log(contador);
-    tecla.onkeydown=function () {
+
+    tecla.onkeydown=function (evento) {
+        if (evento.code==='Space' || evento.code==='Enter') {
+
+        }
         tecla.classList.add('ativa');
         
     }
